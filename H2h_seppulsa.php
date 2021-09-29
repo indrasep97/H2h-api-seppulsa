@@ -4,7 +4,7 @@ Class H2h_seppulsa
 const API_KEY = ''; //isi apikey yang ada di menu api seppulsa
 const USER_ID = '';  //isi user id yang ada di menu api seppulsa
 
-function send(){
+function request($url){
 
 $data = [
  'user_id'=> self::USER_ID,
