@@ -4,18 +4,18 @@ Class H2h_seppulsa
 const API_KEY = ''; //isi apikey yang ada di menu api seppulsa
 const USER_ID = '';  //isi user id yang ada di menu api seppulsa
 
-function cek_saldo(){
+function send(){
 
 $data = [
  'user_id'=> self::USER_ID,
  'key' => self::API_KEY,
 ];
 $params = http_build_query($data);
-$url = "https://seppulsa.com/api/saldo?$params"
+$req = "$url?$params"
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => $url,
+  CURLOPT_URL => $req,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
