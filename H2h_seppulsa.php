@@ -30,4 +30,58 @@ $response = curl_exec($curl);
 curl_close($curl);
 return $response;
 }
+function cek_trx($url,$trxid){
+
+$data = [
+ 'user_id'=> self::USER_ID,
+ 'key' => self::API_KEY,
+ 'trxid'=> $trxid,
+];
+$params = http_build_query($data);
+$req = "$url?$params"
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => $req,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+return $response;
+}
+function tiket($url,$tiket){
+
+$data = [
+ 'user_id'=> self::USER_ID,
+ 'key' => self::API_KEY,
+ 'no_tiket'=>$tiket,
+];
+$params = http_build_query($data);
+$req = "$url?$params"
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => $req,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+return $response;
+}
 }
