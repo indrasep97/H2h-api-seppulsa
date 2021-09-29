@@ -1,13 +1,14 @@
 <?php
 Class H2h_seppulsa
 {
+const API_KEY = ''; //isi apikey yang ada di menu api seppulsa
+const USER_ID = '';  //isi user id yang ada di menu api seppulsa
 
 function cek_saldo(){
-$userid = ""; //isi user id yang ada di menu api seppulsa
-$apikey = ""; // isi apikey yang ada di menu api seppulsa
+
 $data = [
- 'user_id'=> $userid,
- 'key' => $apikey,
+ 'user_id'=> self::USER_ID,
+ 'key' => self::API_KEY,
 ];
 $params = http_build_query($data);
 $url = "https://seppulsa.com/api/saldo?$params"
